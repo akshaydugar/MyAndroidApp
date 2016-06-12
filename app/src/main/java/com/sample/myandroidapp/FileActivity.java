@@ -17,7 +17,8 @@ import android.widget.Toast;
  * Created by zaraahmed on 6/11/16.
  */
 
-public class FileActivity extends AppCompatActivity {
+public class FileActivity extends AppCompatActivity
+{
 
     Button saveTextButton;
     Button openTextButton;
@@ -26,7 +27,8 @@ public class FileActivity extends AppCompatActivity {
     TextView contentToShowTV;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.file_activity_layout);
         saveTextButton = (Button) findViewById(R.id.save_text_button);
@@ -37,7 +39,8 @@ public class FileActivity extends AppCompatActivity {
 
         saveTextButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View view)
+            {
                 contentToSaveET.setVisibility(View.VISIBLE);
                 contentToShowTV.setVisibility(View.GONE);
                 saveData();
@@ -46,7 +49,8 @@ public class FileActivity extends AppCompatActivity {
 
         openTextButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View view)
+            {
                 contentToSaveET.setVisibility(View.GONE);
                 contentToShowTV.setVisibility(View.VISIBLE);
                 showData();
@@ -54,7 +58,8 @@ public class FileActivity extends AppCompatActivity {
         });
     }
 
-    private void showData() {
+    private void showData()
+    {
         try {
             String fileName = nameOfFileET.getText().toString();
 
@@ -65,7 +70,8 @@ public class FileActivity extends AppCompatActivity {
             byte[] bytes = new byte[1024];
             if (!fileToOpen.exists()) {
                 Toast.makeText(this, "A file with this name does not exist", Toast.LENGTH_SHORT).show();
-            } else {
+            }
+            else {
                 FileInputStream fi = new FileInputStream(fileToOpen);
 
                 while (fi.read(bytes) != -1) {
@@ -76,24 +82,29 @@ public class FileActivity extends AppCompatActivity {
                 fi.close();
                 contentToShowTV.setText(content);
             }
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
 
         }
     }
 
-    private void saveData() {
+    private void saveData()
+    {
         try {
             String fileName = nameOfFileET.getText().toString();
 
             File fileToWriteTo = new File(getFilesDir(), fileName);
             if (fileToWriteTo.exists()) {
                 Toast.makeText(this, "A file with this name already exists", Toast.LENGTH_SHORT).show();
-            } else {
+            }
+            else {
                 FileOutputStream fo = new FileOutputStream(fileToWriteTo);
                 fo.write(contentToSaveET.getText().toString().getBytes());
                 fo.close();
+                Toast.makeText(this, "File saved", Toast.LENGTH_SHORT).show();
             }
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
 
         }
 

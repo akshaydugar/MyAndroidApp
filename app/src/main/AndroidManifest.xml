@@ -15,10 +15,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".FileActivity">
-         </activity>
-        <activity android:name=".NetworkRequestActivity">
-        </activity>
+        <activity
+            android:name=".FileActivity"
+            android:label="@string/file_io"></activity>
+        <activity android:name=".NetworkRequestActivity"></activity>
     </application>
 
 </manifest>

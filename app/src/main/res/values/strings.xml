@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">My Android App</string>
+    <string name="file_io">File I/O</string>
+    <string name="network_io">Network I/O</string>
+    <string name="name_of_file">Name of file</string>
+    <string name="enter_text_to_save">Enter text to save</string>
+    <string name="save">Save</string>
+    <string name="open">Open</string>
 </resources>
