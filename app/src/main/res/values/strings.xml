@@ -8,4 +8,5 @@
     <string name="open">Open</string>
     <string name="name_of_city">Name of city</string>
     <string name="get_current_weather">Get current weather</string>
+    <string name="version">1.0</string>
 </resources>
