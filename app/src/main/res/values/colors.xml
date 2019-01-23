@@ -4,5 +4,6 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="colorMayank">##FF0000</color>
+    <color name="mayank1">##FF0123</color>
 
 </resources>
